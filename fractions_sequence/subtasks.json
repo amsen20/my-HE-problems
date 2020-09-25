@@ -1,0 +1,25 @@
+{
+	"global_validators": ["validator.cpp"],
+	"subtasks": {
+		"samples": {
+			"index": 0,
+			"score": 0,
+			"validators": []
+		}, 
+		"nm8": {
+			"index": 1,
+			"score": 4,
+			"validators": []
+		},
+ 		"n200m15": {
+			"index": 2,
+			"score": 32,
+			"validators": []
+		},
+		"full": {
+			"index": 3,
+			"score": 64,
+			"validators": [""]
+		}
+	}
+}

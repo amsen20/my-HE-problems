@@ -1,12 +1,5 @@
 {
 	"solution.cpp": {
 		"verdict": "model_solution"
-	},
-	"pw.cpp": {
-		"verdict": "incorrect",
-		"except": {
-			"nm8": "correct",
-			"n200m15": "correct"
-		}
 	}
 }

@@ -1,0 +1,4 @@
+PASM.cpp:9:11: warning: unused variable 'N' [-Wunused-const-variable]
+const int N = 1e5+100;
+          ^
+1 warning generated.

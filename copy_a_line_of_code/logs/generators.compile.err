@@ -1,0 +1,17 @@
+In file included from rnd.cpp:2:
+./testlib.h:353:19: warning: passing an object of reference type to 'va_start' has undefined behavior [-Wvarargs]
+    FMT_TO_RESULT(fmt, fmt.c_str(), result);
+                  ^
+./testlib.h:351:39: note: parameter of type 'const std::string &' (aka 'const basic_string<char, char_traits<char>, allocator<char> > &') is declared here
+std::string format(const std::string& fmt, ...)
+                                      ^
+./testlib.h:4027:17: warning: unknown attribute 'error' ignored [-Wunknown-attributes]
+__attribute__ ((error("Don't use random_shuffle(), use shuffle() instead")))
+                ^
+./testlib.h:4041:17: warning: unknown attribute 'error' ignored [-Wunknown-attributes]
+__attribute__ ((error("Don't use rand(), use rnd.next() instead")))
+                ^
+./testlib.h:4055:17: warning: unknown attribute 'error' ignored [-Wunknown-attributes]
+__attribute__ ((error("Don't use srand(), you should use " 
+                ^
+4 warnings generated.

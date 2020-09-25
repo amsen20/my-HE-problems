@@ -2,20 +2,18 @@
 #include "testlib.h"
 using namespace std;
 
-#define ll long long
-#define pb push_back
-
-const int maxn = 1e5 + 20;
-const int maxN = 500;
+const int MAXA = 10000*10000, MAXL = 1000;
 
 int main(int argc , char* argv[])
 {
 	registerValidation(argc, argv);
 
-	int n = inf.readInt(1 , maxN , "n");
+	int a = inf.readInt(1 , MAXA , "a");
 	inf.readSpace();
-	int m = inf.readInt(1 , maxN , "m");
-	inf.readEoln();
-
+	int b = inf.readInt(1 , MAXA , "b");
+	inf.readSpace();
+	int l = inf.readInt(1 , MAXL , "l");
+    inf.readEoln();
 	inf.readEof();
+    ensuref(a < b, "a should be less than b");
 }

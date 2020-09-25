@@ -1,10 +1,10 @@
 {
-	"name": "KAJ",
-	"code": "KAJ",
-	"title": "NOT_SAF",
+	"name": "FS",
+	"code": "FS",
+	"title": "FS",
 	"type": "Batch",
 	"has_grader": false,
-	"time_limit": 3.0,
+	"time_limit": 2.0,
 	"memory_limit": 256,
-	"description": "Final - Day3 - Task 1"
+	"description": ""
 }

@@ -1,0 +1,11 @@
+@subtask full
+rnd 7
+rnd 8
+rnd 10
+rnd 100
+rnd 1000
+rnd 10000
+rnd 100000 a
+rnd 100000 b
+rnd 100000 c
+rnd 100000 d

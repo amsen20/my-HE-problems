@@ -1,0 +1,11 @@
+@subtask full
+rnd_tree 5 200
+rnd_tree 10 100
+rnd_tree 20 600
+rnd_tree 20 0
+rnd_tree 20 -600
+rnd_tree 500 200
+rnd_tree 10000 100
+rnd_tree 100000 600
+rnd_tree 100000 0
+rnd_tree 100000 -600

@@ -27,9 +27,11 @@ ii dfs(int v){
 int solve_linear(vector<ii> v){
 	int ls[2] = {0, 0};
 	for(auto i : v){
-		ls[1] += i.second;
-		ls[0] += max(i.first, i.second);
-		swap(ls[0], ls[1]);
+        int lls[2] = {0, 0};
+        lls[0] = ls[0];
+        lls[1] = ls[1];
+        ls[0] = i.second + max(lls[0], lls[1]);
+        ls[1] = max(i.first, i.second) + lls[0];
 	}
 	return max(ls[0], ls[1]);
 }
@@ -38,8 +40,9 @@ int solve(vector<int> cyc){
     for(auto i : cyc)
 		mark[i] = true;
 	vector<ii> v;
-	for(auto i : cyc)
+	for(auto i : cyc){
 		v.push_back(dfs(i));
+    }
 
 	if(v.size() == 1)
 		return v[0].second;
@@ -58,7 +61,6 @@ int solve(vector<int> cyc){
 			cur.push_back(v[i]);
 		return max(v[1].first, v[1].second) + v[0].second + v[2].second + solve_linear(cur);
 	}();
-
 	// 1 is not chosen
 	ret = max(ret, [&]{
 		vector<ii> cur;
@@ -76,7 +78,7 @@ signed main(){
 	int n;cin >> n;
 	for(int i=0 ; i<n ; i++){
 		cin >> f[i];f[i] --;
-		r[ f[i] ].push_back(i);
+        r[ f[i] ].push_back(i);
 	}
 
 	int ans=0;

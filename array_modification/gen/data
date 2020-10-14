@@ -1,0 +1,17 @@
+@subtask full
+rnd 5 l
+rnd 6 b
+rnd 10 l
+rnd 100 l
+rnd 500 b
+rnd 1000 b
+rnd 10000 l
+rnd 100000 l
+rnd 200000 b a
+rnd 200000 b b
+rnd 200000 b c
+rnd 200000 b d
+rnd 200000 b e
+rnd 200000 b f
+rnd 200000 b g
+rnd 200000 b h

@@ -1,0 +1,10 @@
+{
+	"name": "CALOC",
+	"code": "CALOC",
+	"title": "CALOC",
+	"type": "Batch",
+	"has_grader": false,
+	"time_limit": 5.0,
+	"memory_limit": 256,
+	"description": "amsen hackerearth constest"
+}

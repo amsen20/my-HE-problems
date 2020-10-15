@@ -1,5 +1,5 @@
 @subtask full
-rnd_tree 5 10 200
+rnd_tree 3 10 200
 rnd_tree 5 10 200 a
 rnd_tree 5 10 200 b
 rnd_tree 10 100 100

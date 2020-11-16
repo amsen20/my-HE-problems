@@ -74,7 +74,7 @@ int main(int argc , char* argv[]){
 
     int step = mx/blcks, cnt = n/blcks;
     for(int i=0 ; blcks-- ; i += step)
-        build(i+1, min(i+step, mx)+1, cnt, rnd.wnext(3, -1));
+        build(i+1, min(i+step, mx)+1, cnt, rnd.wnext(4, -1));
     
     shuffle(out.begin(), out.end());
     cout << out.size() << "\n";

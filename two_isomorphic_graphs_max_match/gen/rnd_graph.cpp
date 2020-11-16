@@ -4,22 +4,26 @@ using namespace std;
 
 typedef pair<int, int> ii;
 
-const int N = 2e5+100;
+const int N = 1e5+100;
 
 int p[N], par[N];
 
-vector<ii> build_tree(int n, int t){
-    for(int i=1 ; i<n ; i++)
-        par[i] = rnd.wnext(i, t);
- 
-    vector<pair<int, int> > eds;
+vector<ii> build_graph(int n, int m, int t){
+    vector<ii> eds;
+    int deg = (m + n-1)/n;
     for(int i=1 ; i<n ; i++){
-        int v = i, u = par[i];
-        v = p[v];
-        u = p[u];
-        eds.push_back(make_pair(v, u));
+        int cur = min(deg, m) + 1;
+        if(i == n-1)
+            cur = m + 1;
+        cur = min(cur, i);
+        set<int> st;
+        do{
+            st.insert(rnd.next(i));
+        }while(st.size() < cur);
+        m -= cur-1;
+        for(auto j : st)
+            eds.push_back(ii(i, j));
     }
-
     return eds;
 }
 
@@ -38,16 +42,17 @@ int main(int argc , char* argv[]){
 	registerGen(argc, argv , 1);
 
 	int n = atoi(argv[1]);
-    int t = atoi(argv[2]);
+    int m = atoi(argv[2]);
+    int t = atoi(argv[3]);
 
-    auto tree = build_tree(n, t);
-    auto t1 = shuffle_vertices(n, tree);
-    auto t2 = shuffle_vertices(n, tree);
+    auto graph = build_graph(n, m, t);
+    auto g1 = shuffle_vertices(n, graph);
+    auto g2 = shuffle_vertices(n, graph);
 
-    cout << n << " " << n-1 << "\n";
-    for(auto ed : t1)
+    cout << n << " " << g1.size() << "\n";
+    assert(g1.size() == g2.size());
+    for(auto ed : g1)
         cout << ed.first + 1 << " " << ed.second + 1 << "\n";
-    for(auto ed : t2)
+    for(auto ed : g2)
         cout << ed.first + 1 << " " << ed.second + 1 << "\n";
 }
-

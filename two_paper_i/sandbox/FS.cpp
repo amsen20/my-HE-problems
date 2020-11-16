@@ -78,18 +78,28 @@ void dfs(int v=0, int par=-1, int up_used=0, int up_unused=1){
         ppref.push_back(dp_dn[ ch[i] ][0] * (i ? pref[i-1] : 1));
         ssuf.push_back(dp_dn[ ch[i] ][0] * (i+1 < ch.size() ? suf[i+1] : 1));
     }
-    proc(ppref, ssuf, [&](int a, int b){return a^b;}, 0);
-    for(int i=0 ; i<ch.size() ; i++){
-        if(i) { // left
-            int cur = ppref[i-1] * (i+1 < ch.size() ? suf[i+1] : 1);
+    if(!ch.empty()){ // left
+        int pp = ppref[0];
+        for(int i=1 ; i<ch.size() ; i++){
+            int cur = pp * (i+1 < ch.size() ? suf[i+1] : 1);
             unused[i] ^= cur * up_unused;
+            if(!dp_dn[ ch[i] ][1])
+                pp = 0;
+            pp ^= ppref[i];
         }
-        if(i+1 < ch.size()) { // right
-            int cur = ssuf[i+1] * (i ? pref[i-1] : 1);
+    }
+    if(!ch.empty()){ // right
+        int ss = ssuf[ch.size()-1];
+        dfs(ch.back(), v, used.back(), unused.back());
+        for(int i=(int)ch.size()-2 ; i>=0 ; i--){
+            int cur = ss * (i ? pref[i-1] : 1);
             unused[i] ^= cur * up_unused;
+            int u = ch[i];
+            if(!dp_dn[u][1])
+                ss = 0;
+            ss ^= ssuf[i];
+            dfs(u, v, used[i], unused[i]);
         }
-        int u = ch[i];
-        dfs(u, v, used[i], unused[i]);
     }
 }
 

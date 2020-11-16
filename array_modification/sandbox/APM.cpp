@@ -7,27 +7,26 @@ typedef long long ll;
 
 const int N = 2e5+100;
 
-int a[N];
+int ans[N], a[N];
 
 signed main(){
 	ios_base::sync_with_stdio(false);cin.tie(NULL);
     int ls=0;
     int n;cin >> n;
-    for(int i=0 ; i<n ; i++)
-        cin >> a[i];
-    int ans=0;
     for(int i=0 ; i<n ; i++){
-        int pref=0;
-        for(int j=0 ; j<i ; j++){
-            pref += a[j];
-            pref /= 2;
-        }
-        int suf=0;
-        for(int j=n-1 ; j>i ; j--){
-            suf += a[j];
-            suf /= 2;
-        }
-        ans = max(ans, pref + suf + a[i]);
+        cin >> a[i];
+        ans[i] = a[i];
     }
-    cout << ans << "\n";
+    for(int i=0 ; i<n ; i++){
+        ans[i] += ls;
+        ls += a[i];
+        ls /= 2;
+    }
+    ls = 0;
+    for(int i=n-1 ; i>=0 ; i--){
+        ans[i] += ls;
+        ls += a[i];
+        ls /= 2;
+    }
+    cout << *max_element(ans, ans+n) << "\n";
 }

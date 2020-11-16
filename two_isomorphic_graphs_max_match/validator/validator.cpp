@@ -2,7 +2,9 @@
 #include "testlib.h"
 using namespace std;
 
-const int MAXN = 100*1000, MAXM = 200*1000;
+typedef pair<int, int> ii;
+
+const int MAXN = 10*1000, MAXM = 10*1000;
 
 int par[MAXN];
 
@@ -23,6 +25,7 @@ int main(int argc , char* argv[]){
 	int m = inf.readInt(1 , MAXM , "m");
     inf.readEoln();
     { // first graph
+        set<ii> sst;
         for(int i=0 ; i<n ; i++)
             par[i] = i;
         for(int i=0 ; i<m ; i++){
@@ -33,6 +36,10 @@ int main(int argc , char* argv[]){
             u --;
             inf.readEoln();
             merge(v, u);
+            ensuref(!sst.count(ii(v, u)), "graph should be simple");
+            ensuref(v != u, "graph should be simple");
+            sst.insert(ii(v, u));
+            sst.insert(ii(u, v));
         }
         set<int> st;
         for(int i=0 ; i<n ; i++)
@@ -40,6 +47,7 @@ int main(int argc , char* argv[]){
         ensuref(st.size() == 1, "graph should be connected");
     }
     { // second graph
+        set<ii> sst;
         for(int i=0 ; i<n ; i++)
             par[i] = i;
         for(int i=0 ; i<m ; i++){
@@ -50,6 +58,10 @@ int main(int argc , char* argv[]){
             u --;
             inf.readEoln();
             merge(v, u);
+            ensuref(!sst.count(ii(v, u)), "graph should be simple");
+            ensuref(v != u, "graph should be simple");
+            sst.insert(ii(v, u));
+            sst.insert(ii(u, v));
         }
         set<int> st;
         for(int i=0 ; i<n ; i++)

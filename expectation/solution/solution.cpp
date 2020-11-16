@@ -4,6 +4,8 @@ using namespace std;
 
 typedef long long ll;
 
+#define int long long
+
 const int N = 60, MOD = 1e9+7;
 
 int add(ll a, int b){
@@ -62,14 +64,14 @@ dat merge(const dat &f, const dat &s){
 
 void init();
 
-int main(){
+signed main(){
 	ios_base::sync_with_stdio(false);cin.tie(NULL);
     init();
     for(int i=0 ; i<4 ; i++)
         dp[0].cnt[i][i] = 1;
     for(int bt=1 ; bt<N ; bt++)
         dp[bt] = merge(dp[bt-1], dp[bt-1]);
-    int n;cin >> n;
+    ll n;cin >> n;
     dat ans = dp[0];
     for(int i=0 ; i<N ; i++)
         if((n-1) & (1LL << i))

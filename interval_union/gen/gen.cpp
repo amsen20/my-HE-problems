@@ -19,7 +19,18 @@ set<int> get_unq(int t, int l, int r){
 }
 
 void build(int l, int r, int cnt, int tp){
-    if(tp < 2){
+    if(tp == 1){
+        if(cnt < 3 || l+cnt >= r-1-cnt)
+            tp --;
+        else{
+            out.push_back(ii(l, l+cnt));
+            out.push_back(ii(r-cnt, r-1));
+            for(int i=0 ; i<cnt-2 ; i++)
+                out.push_back(ii(l+1+i, r-1-cnt+i));
+            return;
+        }
+    }
+    if(tp == 0 || tp == 2){
         set<int> pts = get_unq(2*cnt, l, r);
         vector<int> v;
         for(int i=0 ; i<cnt ; i++)
@@ -41,7 +52,10 @@ void build(int l, int r, int cnt, int tp){
             }
             sum += i;
         }
-    } else { // linear
+        return;
+    }
+    
+    { // linear
         vector<int> pts;
         for(auto i : get_unq(cnt+1, l, r))
             pts.push_back(i);

@@ -7,7 +7,7 @@ typedef long long ll;
 const int N = 22;
 
 ii a[N];
-int uni[N], sz;
+int uni[4*N], sz;
 
 int main(){
 	ios_base::sync_with_stdio(false);cin.tie(NULL);

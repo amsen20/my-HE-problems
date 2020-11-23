@@ -2,18 +2,20 @@
 #include "testlib.h"
 using namespace std;
 
-const int MAXA = 10000*10000, MAXL = 1000;
+const int N = 100;
 
-int main(int argc , char* argv[])
-{
+int main(int argc , char* argv[]){
 	registerValidation(argc, argv);
-
-	int a = inf.readInt(1 , MAXA , "a");
+	int n = inf.readInt(1, N);
 	inf.readSpace();
-	int b = inf.readInt(1 , MAXA , "b");
-	inf.readSpace();
-	int l = inf.readInt(1 , MAXL , "l");
-    inf.readEoln();
+	int m = inf.readInt(1, N);
+	inf.readEoln();
+	for(int i=0 ; i<n ; i++){
+		for(int j=0 ; j<m ; j++){
+			char c = inf.readChar();
+			ensuref(c == '.' || c == '#', "grid must be '#' & '.'");
+		}
+		inf.readEoln();
+	}
 	inf.readEof();
-    ensuref(a < b, "a should be less than b");
 }

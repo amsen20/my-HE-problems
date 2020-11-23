@@ -2,45 +2,69 @@
 using namespace std;
 
 typedef long long ll;
-#define int ll
 
-const int MAXOUT = 1e18;
+const int N = 110;
 
-int gcd(int a, int b){
-    if(a > b)
-        swap(a, b);
-    if(a == 0)
-        return b;
-    return gcd(b%a, a);
+string matIn[N], mat[N];
+int par[N*N];
+
+int root(int v){
+    return par[v] = (v == par[v] ? v : root(par[v]));
 }
 
-signed main(signed argc, char * argv[])
-{
-	//registerChecker("fs", argc, argv);
-    int a, b, l;cin >> a >> b >> l;
-    vector<int> up, dn;
-    up.push_back(b);
-    dn.push_back(a);
-    for(int i=0 ; i<l ; i++){
-        int f;cin >> f;
-        int s;cin >> s;
-        assert(f < s);
-        assert(f <= MAXOUT);
-        assert(s <= MAXOUT);
-        assert(f > 0);
-        assert(s > 0);
-        up.push_back(f);
-        dn.push_back(s);
-    }
-    for(auto &i : up)
-        for(auto &j : dn){
-            int g = gcd(i, j);
-            i /= g;
-            j /= g;
+void merge(int v, int u){
+    v = root(v);
+    u = root(u);
+    par[v] = u;
+}
+
+signed main(signed argc, char * argv[]){
+	ios_base::sync_with_stdio(false);cin.tie(NULL);
+    int cnt=0, used=0;
+    int n, m;cin >> n >> m;
+    int score = 3;
+    if(n == 100 && m == 50)
+        score ++;
+    for(int i=0 ; i<n ; i++)
+        cin >> matIn[i];
+    for(int i=0 ; i<n ; i++){
+        cin >> mat[i];
+        assert(mat[i].size() == matIn[i].size());
+        for(int j=0 ; j<matIn[i].size() ; j++){
+            cnt += (matIn[i][j] == '.');
+            if(matIn[i][j] == mat[i][j])
+                continue;
+            assert(matIn[i][j] != '#');
+            assert(mat[i][j] == '#');
+            used ++;
         }
-    for(auto i : up)
-        assert(i == 1);
-    for(auto i : dn)
-        assert(i == 1);
-    cout << 5 << "\n";
+    }
+    assert(3*used <= cnt);
+    int ed=0;
+    for(int i=0 ; i<n ; i++)
+        for(int j=0 ; j<m ; j++)
+            par[i*m+j] = i*m+j;
+    int dx[4] = {-1, 1, 0, 0};
+    int dy[4] = {0, 0, -1, 1};
+    cnt = 0;
+    for(int i=0 ; i<n ; i++)
+        for(int j=0 ; j<m ; j++)
+            if(mat[i][j] == '.'){
+                cnt ++;
+                for(int it=0 ; it<4 ; it++){
+                    int nx = i+dx[it], ny = j+dy[it];
+                    if(nx<0 || nx>=n || ny<0 || ny>=m || mat[nx][ny] == '#')
+                        continue;
+                    merge(i*m+j, nx*m+ny);
+                    ed ++;
+                }
+            }
+    ed /= 2;
+    set<int> st;
+    for(int i=0 ; i<n ; i++)
+        for(int j=0 ; j<m ; j++)
+            if(mat[i][j] == '.')
+                st.insert(root(i*m+j));
+    assert(cnt - (int)st.size() == ed);
+    cout << score << "\n";
 }

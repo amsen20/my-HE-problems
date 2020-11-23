@@ -48,6 +48,7 @@ int main(int argc , char* argv[]){
     int m = atoi(argv[2]);
     int patId = atoi(argv[3]);
     auto pat = getPat(patId);
+    cout << n << " " << m << "\n";
     for(int i=0 ; i<n ; i++)
         for(int j=0 ; j<m ; j++){
             cout << pat[i%pat.size()][j%pat[0].size()];

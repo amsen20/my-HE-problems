@@ -1,8 +1,8 @@
 @subtask full
 rnd 5 5 1
-rnd 5 5 0
-rnd 5 5 -1
-rnd 5 5 -100
+rnd 5 10 0
+rnd 10 5 -1
+rnd 20 50 -100
 rnd 100 100 100
 rnd 100 100 1
 rnd 100 100 0 a
@@ -11,7 +11,6 @@ rnd 100 100 0 c
 rnd 100 100 0 d
 rnd 100 100 0 e
 rnd 100 100 0 f
-rnd 100 100 0 g
 rnd 100 100 -1 a
 rnd 100 100 -1 b
 rnd 100 100 -1 c
@@ -19,13 +18,17 @@ rnd 100 100 -1 d
 rnd 100 100 -1 e
 rnd 100 100 -1 f
 rnd 100 100 -1 g
-rnd 100 100 -1 h
+rnd 100 100 -2 a
+rnd 100 100 -2 b
+rnd 100 100 -2 c
+rnd 100 100 -2 d
+rnd 100 100 -2 e
 rnd 100 100 -100
 dup 100 100 1
-dup 50 50 1
+dup 50 100 1
 dup 100 100 2
 dup 100 100 3
-dup 50 50 3
+dup 100 50 3
 dup 100 100 4
 dup 100 100 5
-dup 50 50 5
+dup 50 100 5

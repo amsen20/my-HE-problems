@@ -1,0 +1,33 @@
+@subtask full
+rnd 5
+blck 10 5
+blck 10 2
+rnd 100
+blck 100 1
+blck 100 5 a
+blck 100 5 b
+blck 100 10 a
+blck 100 10 b
+blck 100 10 c
+blck 100 50 a
+blck 100 50 b
+blck 100 50 c
+rnd 100 a
+rnd 100 b
+rnd 100 c
+rnd 100 d
+rnd 100 e
+rnd 100 f
+rnd 100000 a
+rnd 100000 b
+rnd 100000 c
+rnd 100000 d
+rnd 100000 e
+blck 100000 1
+blck 100000 10 a
+blck 100000 10 b
+blck 100000 100 a
+blck 100000 100 b
+blck 100000 1000 a
+blck 100000 1000 b
+blck 100000 10000

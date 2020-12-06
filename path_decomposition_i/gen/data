@@ -1,0 +1,31 @@
+@subtask full
+rnd 5 0 a
+rnd 5 0 b
+rnd 5 -100
+rnd 5 100
+rnd 1000 0 a
+rnd 1000 0 b
+rnd 1000 0 c
+rnd 1000 0 d
+rnd 1000 -10
+rnd 1000 -100
+rnd 1000 -1000
+rnd 1000 10
+rnd 1000 100
+rnd 1000 1000
+rnd 10000 0 a
+rnd 10000 0 b
+rnd 10000 0 c
+rnd 10000 -100
+rnd 10000 -1000
+rnd 10000 -10000
+rnd 200000 0 a
+rnd 200000 0 b
+rnd 200000 -10
+rnd 200000 -100 a
+rnd 200000 -100 b
+rnd 200000 -1000 a
+rnd 200000 -1000 b
+rnd 200000 -10000
+rnd 200000 10
+rnd 200000 100

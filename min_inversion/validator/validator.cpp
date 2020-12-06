@@ -2,7 +2,7 @@
 #include "testlib.h"
 using namespace std;
 
-const int MAXN = 1e5;
+const int MAXN = 7000;
 
 int main(int argc , char* argv[]){
 	registerValidation(argc, argv);

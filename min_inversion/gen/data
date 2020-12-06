@@ -18,16 +18,17 @@ rnd 100 c
 rnd 100 d
 rnd 100 e
 rnd 100 f
-rnd 100000 a
-rnd 100000 b
-rnd 100000 c
-rnd 100000 d
-rnd 100000 e
-blck 100000 1
-blck 100000 10 a
-blck 100000 10 b
-blck 100000 100 a
-blck 100000 100 b
-blck 100000 1000 a
-blck 100000 1000 b
-blck 100000 10000
+rnd 7000 a
+rnd 7000 b
+rnd 7000 c
+rnd 7000 d
+rnd 7000 e
+rnd 7000 f
+rnd 7000 g
+blck 7000 1
+blck 7000 10 a
+blck 7000 10 b
+blck 7000 100 a
+blck 7000 100 b
+blck 7000 1000 a
+blck 7000 1000 b

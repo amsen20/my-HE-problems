@@ -1,0 +1,21 @@
+@subtask full
+rnd 10 10 4 c
+rnd 10 10 4 z
+rnd 10 10 50 c
+rnd 10 10 50 z
+rnd 50 50 10 c
+rnd 64 64 64 b
+rnd 64 64 64 c
+rnd 64 64 64 d
+rnd 64 64 64 z
+rnd 64 64 128 b a
+rnd 64 64 128 b b
+rnd 64 64 128 b c
+rnd 64 64 128 c a
+rnd 64 64 128 c b
+rnd 64 64 128 c c
+rnd 64 64 128 z a
+rnd 64 64 128 z b
+rnd 64 64 128 z c
+rnd 64 64 128 z d
+rnd 64 64 128 z e

@@ -1,0 +1,26 @@
+@subtask full
+rnd 4 y
+rnd 4 n
+rnd 100 y a
+rnd 100 y b
+rnd 100 y c
+rnd 100 n a
+rnd 100 n b
+rnd 100000 y a
+rnd 100000 y b
+rnd 100000 y c
+rnd 100000 y d
+rnd 100000 y e
+rnd 100000 y f
+rnd 100000 y g
+rnd 100000 y h
+rnd 100000 y i
+rnd 100000 y j
+rnd 100000 y k
+rnd 100000 y l
+rnd 100000 y m
+rnd 100000 n a
+rnd 100000 n b
+rnd 100000 n c
+rnd 100000 n d
+rnd 100000 n e

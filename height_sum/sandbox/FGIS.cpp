@@ -19,7 +19,7 @@ signed main(){
 	int n;
 	ll x;cin >> n >> x;
 	x -= n;
-	if(x<0)
+	if(x<2*(n-1) + 1 || x > n*(n+1)/2)
 		fin();
 	int cnt=n-1;
 	ans[0] = 1;

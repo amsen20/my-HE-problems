@@ -18,9 +18,9 @@ signed main(){
 	ios_base::sync_with_stdio(false);cin.tie(NULL);
 	int n;
 	ll x;cin >> n >> x;
-	x -= n;
-	if(x<0)
+	if(x<2*(n-1) + 1 || x > n*(n+1)/2)
 		fin();
+	x -= n;	
 	int cnt=n-1;
 	ans[0] = 1;
 	for(int i=1 ; i<n ; i++){
@@ -40,6 +40,7 @@ signed main(){
 			break;
 		}
 	}
+	
 	if(x)
 		fin();
 	int ls=0, it=1;

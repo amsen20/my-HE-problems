@@ -1,5 +1,22 @@
 {
     "files.associations": {
-        "vector": "cpp"
+        "vector": "cpp",
+        "iterator": "cpp",
+        "functional": "cpp",
+        "__functional_base": "cpp",
+        "unordered_set": "cpp",
+        "__config": "cpp",
+        "type_traits": "cpp",
+        "__hash_table": "cpp",
+        "iostream": "cpp",
+        "iomanip": "cpp",
+        "ios": "cpp",
+        "random": "cpp",
+        "forward_list": "cpp",
+        "list": "cpp",
+        "*.tcc": "cpp",
+        "iosfwd": "cpp",
+        "string": "cpp",
+        "utility": "cpp"
     }
 }

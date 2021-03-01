@@ -1,0 +1,21 @@
+@subtask full
+rnd 50 30 0
+rnd 100 50 0
+rnd 100 50 0 a
+rnd 100 50 0 b
+rnd 100 50 0 c
+rnd 100 50 1
+rnd 100 50 -1
+cons 100 20 0
+cons 100 20 -1
+cons 100 20 1
+cons 100 50 0
+cons 100 50 0 a
+cons 100 50 0 b
+all 100 10 0
+all 100 10 1
+all 100 10 -1
+all 100 7 0
+all 100 7 1
+all 100 7 -1
+all 50 8 0
